@@ -14,7 +14,7 @@ it('should return "fizz-buzz" if multiple of 15', function() {
   });
 
 it('should return "buzz" if multiple of 5', function() {
-    const normalCases = [-5, 5, 10, 15];
+    const normalCases = [-5, 5, 10, 25];
     
     normalCases.forEach(function(input) {
       const answer = fizzBuzzer(input);
@@ -27,17 +27,17 @@ it('should return "fizz" if multiple of 3', function() {
     
     normalCases.forEach(function(input) {
       const answer = fizzBuzzer(input);
-      answer.should.equal(input);
+      answer.should.equal('fizz');
     });
   });
 
 it('should return number if number is not multiple of 3 or 5', function() {
 
-	const normalCases = [-3, 3, 6, 9];
+	const normalCases = [-1, 4, 7, 2];
     
     normalCases.forEach(function(input) {
       const answer = fizzBuzzer(input);
-      answer.should.equal('fizz');
+      answer.should.equal(input);
     });
   });
 
