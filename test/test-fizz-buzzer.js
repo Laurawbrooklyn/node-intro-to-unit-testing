@@ -27,12 +27,22 @@ it('should return "fizz" if multiple of 3', function() {
     
     normalCases.forEach(function(input) {
       const answer = fizzBuzzer(input);
+      answer.should.equal(input);
+    });
+  });
+
+it('should return number if number is not multiple of 3 or 5', function() {
+
+	const normalCases = [-3, 3, 6, 9];
+    
+    normalCases.forEach(function(input) {
+      const answer = fizzBuzzer(input);
       answer.should.equal('fizz');
     });
   });
 
-it('should return number if not multiple of 3 or 5', function() {
-    const badInputs = [1, 2, 4, 7];
+it('should run error message if input is not a number', function() {
+    const badInputs = ['L', true, false, 'spaghetti'];
     
     badInputs.forEach(function(input) {
       (function() {
